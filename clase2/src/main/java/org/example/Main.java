@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,6 +53,20 @@ public class Main {
         Function<Integer,Integer> exponent = integer -> integer*integer;
 
         //
-        lista.stream().filter();
+        lista.stream().filter((x)->x%2==0).forEach(System.out::println);
+//------------------------------------------------------
+        Predicate<Integer> predi = new Predicate<>(){
+            @Override
+            public boolean test(Integer t) {
+                return t%2==0;
+            }
+        };
+        lista.stream().filter(predi).forEach(System.out::println);
+//--------------------------------------------------------
+        ArrayList<Persona> listaPersonas = new ArrayList<>();
+        listaPersonas.add(new Persona(33002394));
+        listaPersonas.add(new Persona(50324053));
+        listaPersonas.add(new Persona(10234953));
+        listaPersonas.stream().filter((x)->x.getDni()>32000000).forEach((p)->System.out.println(p.getDni()));
     }
 }
