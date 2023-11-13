@@ -23,13 +23,13 @@ public class CancionTest {
 
     @Test
     public void cancionEsLanzada() {
-        assertEquals(MUSICAL_NOTE + "Coldplay - A Rush of Blood to the head - The Scientist", cancion.displaySongDetail());
+        assertEquals(MUSICAL_NOTE.texto() + "Coldplay - A Rush of Blood to the head - The Scientist", cancion.displaySongDetail());
     }
 
     @Test
     public void cancionEnAuge() {
         cancion.play(1500);
-        assertEquals(ROCKET + "Coldplay - The Scientist (A Rush of Blood to the head - 2002)", cancion.displaySongDetail());
+        assertEquals(ROCKET.texto() + "Coldplay - The Scientist (A Rush of Blood to the head - 2002)", cancion.displaySongDetail());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class CancionTest {
         cancion.play(1500);
         cancion.dislike(6000);
  //       assertEquals(6000, cancion.getDislikes());
-        assertEquals(MUSICAL_NOTE + "Coldplay - A Rush of Blood to the head - The Scientist", cancion.displaySongDetail());
+        assertEquals(MUSICAL_NOTE.texto() + "Coldplay - A Rush of Blood to the head - The Scientist", cancion.displaySongDetail());
     }
 
     @Test
@@ -45,7 +45,7 @@ public class CancionTest {
         cancion.play(60000);
         cancion.like(50000);
         cancion.setReproducedLast24Hours(true);
-        assertEquals(FIRE + "The Scientist - Coldplay (A Rush of Blood to the head - 2002)", cancion.displaySongDetail());
+        assertEquals(FIRE.texto() + "The Scientist - Coldplay (A Rush of Blood to the head - 2002)", cancion.displaySongDetail());
     }
 
     @Test
@@ -53,6 +53,6 @@ public class CancionTest {
         cancion.play(100000);
         cancion.like(60000);
         cancion.setReproducedLast24Hours(false);
-        assertEquals(MUSICAL_NOTE + "Coldplay - A Rush of Blood to the head - The Scientist", cancion.displaySongDetail());
+        assertEquals(MUSICAL_NOTE.texto() + "Coldplay - A Rush of Blood to the head - The Scientist", cancion.displaySongDetail());
     }
 }

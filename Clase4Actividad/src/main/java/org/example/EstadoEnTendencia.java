@@ -6,6 +6,6 @@ public class EstadoEnTendencia implements Estado{
     @Override
     public String displaySongDetail(Cancion song) {
         // “Título de la canción – Nombre del artista (Nombre del Álbum – Año del álbum)”
-        return  FIRE + song.getTitle() + " - " + song.getArtist() + " (" + song.getAlbum() + " - " + song.getAlbumyear() + ")";
+        return  FIRE.texto() + song.getTitle() + " - " + song.getArtist() + " (" + song.getAlbum() + " - " + song.getAlbumyear() + ")";
     }
 }
